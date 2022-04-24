@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-
+import { NbComponentShape, NbComponentSize, NbComponentStatus, NbThemeService } from '@nebular/theme';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { SmartTableData } from '../../../@core/data/smart-table';
 
 @Component({
@@ -27,7 +29,7 @@ export class SmartTableComponent {
     },
     columns: {
       id: {
-        title: 'ID',
+        title: 'Agent ID',
         type: 'number',
       },
       firstName: {
@@ -39,15 +41,15 @@ export class SmartTableComponent {
         type: 'string',
       },
       username: {
-        title: 'Username',
+        title: 'RAL',
         type: 'string',
       },
       email: {
-        title: 'E-mail',
+        title: 'FAL',
         type: 'string',
       },
       age: {
-        title: 'Age',
+        title: 'BILL',
         type: 'number',
       },
     },
@@ -55,10 +57,21 @@ export class SmartTableComponent {
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private service: SmartTableData) {
+  constructor(private service: SmartTableData, private readonly themeService: NbThemeService) {
     const data = this.service.getData();
     this.source.load(data);
+
+    this.materialTheme$ = this.themeService.onThemeChange()
+      .pipe(map(theme => {
+        const themeName: string = theme?.name || '';
+        return themeName.startsWith('material');
+      }));
   }
+
+  public readonly materialTheme$: Observable<boolean>;
+  public readonly statuses: NbComponentStatus[] = [ 'primary', 'success', 'info', 'warning', 'danger' ];
+  public readonly shapes: NbComponentShape[] = [ 'rectangle', 'semi-round', 'round' ];
+  public readonly sizes: NbComponentSize[] = [ 'tiny', 'small', 'medium', 'large', 'giant' ];
 
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {

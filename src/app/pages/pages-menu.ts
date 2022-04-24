@@ -1,40 +1,80 @@
 import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
+  // {
+  //   title: 'E-commerce',
+  //   icon: 'shopping-cart-outline',
+  //   link: '/pages/dashboard',
+  //   home: true,
+  // },
   {
-    title: 'E-commerce',
-    icon: 'shopping-cart-outline',
-    link: '/pages/dashboard',
-    home: true,
-  },
-  {
-    title: 'IoT Dashboard',
+    title: 'Home',
     icon: 'home-outline',
     link: '/pages/iot-dashboard',
   },
   {
-    title: 'Backend Integration',
-    icon: 'settings-outline',
+    title: 'Contract Management',
+    icon: 'folder-outline',
     children: [
       {
-        title: 'PHP',
-        link: '/pages/backend-integration/php',
+        title: 'Contract',
+        link: '/pages/forms/buttons',
       },
       {
-        title: '.NET Core',
-        link: '/pages/backend-integration/dot-net-core',
+        title: 'Counterparties',
+        link: '/pages/forms/buttons',
       },
       {
-        title: 'Node JS',
-        link: '/pages/backend-integration/node-js',
+        title: 'Counterparties List',
+        link: '/pages/forms/buttons',
       },
       {
-        title: 'Java',
-        link: '/pages/backend-integration/java',
+        title: 'Account',
+        link: '/pages/forms/buttons',
       },
       {
-        title: 'E-commerce',
-        link: '/pages/backend-integration/ecommerce',
+        title: 'Account List',
+        link: '/pages/tables/smart-table',
+      },
+      {
+        title: 'Agent',
+        link: '/pages/tables/smart-table',
+      },
+      {
+        title: 'Agent List',
+        link: '/pages/forms/buttons',
+      },
+      {
+        title: 'Matrices',
+        link: '/pages/tables/smart-table',
+      },
+      {
+        title: 'Matrices Usage Rules',
+        link: '/pages/tables/smart-table',
+      },
+      {
+        title: 'Contract Tran. Types',
+        link: '/pages/tables/smart-table',
+      },
+      {
+        title: 'Agents Tran. Types',
+        link: '/pages/tables/smart-table',
+      },
+      {
+        title: 'Agent Signature Level',
+        link: '/pages/tables/smart-table',
+      },
+      {
+        title: 'Contract Message',
+        link: '/pages/tables/smart-table',
+      },
+      {
+        title: 'Agent Message Type',
+        link: '/pages/tables/smart-table',
+      },
+      {
+        title: 'Agent Blind Signing',
+        link: '/pages/tables/smart-table',
       },
     ],
   },
@@ -43,8 +83,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
-    title: 'Layout',
-    icon: 'layout-outline',
+    title: 'Referencial',
+    icon: 'link-2-outline',
     children: [
       {
         title: 'Stepper',
@@ -70,30 +110,66 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Forms',
+    title: 'Business Operation',
     icon: 'edit-2-outline',
     children: [
       {
-        title: 'Form Inputs',
+        title: 'Contract',
         link: '/pages/forms/inputs',
       },
       {
-        title: 'Form Layouts',
+        title: 'Counterparties',
         link: '/pages/forms/layouts',
       },
       {
-        title: 'Buttons',
+        title: 'Counterparties List',
         link: '/pages/forms/buttons',
       },
       {
-        title: 'Datepicker',
+        title: 'Account',
+        link: '/pages/forms/datepicker',
+      },
+      {
+        title: 'Account List',
+        link: '/pages/forms/datepicker',
+      },
+      {
+        title: 'Matrices',
+        link: '/pages/forms/datepicker',
+      },
+      {
+        title: 'Matrices Usage Rules',
+        link: '/pages/forms/datepicker',
+      },
+      {
+        title: 'Contract Tran. Types',
+        link: '/pages/forms/datepicker',
+      },
+      {
+        title: 'Agents Tran. Types',
+        link: '/pages/forms/datepicker',
+      },
+      {
+        title: 'Agent Signature Level',
+        link: '/pages/forms/datepicker',
+      },
+      {
+        title: 'Contract Message',
+        link: '/pages/forms/datepicker',
+      },
+      {
+        title: 'Agent Message Type',
+        link: '/pages/forms/datepicker',
+      },
+      {
+        title: 'Agent Blind Signing',
         link: '/pages/forms/datepicker',
       },
     ],
   },
   {
-    title: 'UI Features',
-    icon: 'keypad-outline',
+    title: 'Communication',
+    icon: 'speaker-outline',
     link: '/pages/ui-features',
     children: [
       {
@@ -115,8 +191,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Modal & Overlays',
-    icon: 'browser-outline',
+    title: 'Security',
+    icon: 'shield-outline',
     children: [
       {
         title: 'Dialog',
@@ -141,7 +217,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Extra Components',
+    title: 'Financial Solutions',
     icon: 'message-circle-outline',
     children: [
       {
@@ -171,7 +247,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Maps',
+    title: 'System',
     icon: 'map-outline',
     children: [
       {
@@ -193,8 +269,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Charts',
-    icon: 'pie-chart-outline',
+    title: 'Archive',
+    icon: 'archive-outline',
     children: [
       {
         title: 'Echarts',
@@ -210,44 +286,44 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
-  {
-    title: 'Editors',
-    icon: 'text-outline',
-    children: [
-      {
-        title: 'TinyMCE',
-        link: '/pages/editors/tinymce',
-      },
-      {
-        title: 'CKEditor',
-        link: '/pages/editors/ckeditor',
-      },
-    ],
-  },
-  {
-    title: 'Tables & Data',
-    icon: 'grid-outline',
-    children: [
-      {
-        title: 'Smart Table',
-        link: '/pages/tables/smart-table',
-      },
-      {
-        title: 'Tree Grid',
-        link: '/pages/tables/tree-grid',
-      },
-    ],
-  },
-  {
-    title: 'Miscellaneous',
-    icon: 'shuffle-2-outline',
-    children: [
-      {
-        title: '404',
-        link: '/pages/miscellaneous/404',
-      },
-    ],
-  },
+  // {
+  //   title: 'Editors',
+  //   icon: 'text-outline',
+  //   children: [
+  //     {
+  //       title: 'TinyMCE',
+  //       link: '/pages/editors/tinymce',
+  //     },
+  //     {
+  //       title: 'CKEditor',
+  //       link: '/pages/editors/ckeditor',
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: 'Tables & Data',
+  //   icon: 'grid-outline',
+  //   children: [
+  //     {
+  //       title: 'Smart Table',
+  //       link: '/pages/tables/smart-table',
+  //     },
+  //     {
+  //       title: 'Tree Grid',
+  //       link: '/pages/tables/tree-grid',
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: 'Miscellaneous',
+  //   icon: 'shuffle-2-outline',
+  //   children: [
+  //     {
+  //       title: '404',
+  //       link: '/pages/miscellaneous/404',
+  //     },
+  //   ],
+  // },
   {
     title: 'Auth',
     icon: 'lock-outline',

@@ -33,6 +33,12 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { MultiSelectComponent } from './buttons/multi-select/multi-select.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { AgGridModule } from 'ag-grid-angular';
+
 const materialModules = [
   MatFormFieldModule,
   MatInputModule,
@@ -62,6 +68,10 @@ const materialModules = [
     NbIconModule,
     ngFormsModule,
     ...materialModules,
+    Ng2SmartTableModule,
+    NgMultiSelectDropDownModule.forRoot(), 
+    NgSelectModule,
+    AgGridModule.withComponents([])
   ],
   declarations: [
     FormsComponent,
@@ -71,6 +81,7 @@ const materialModules = [
     DatepickerComponent,
     MaterialInputsComponent,
     MaterialButtonsComponent,
+    MultiSelectComponent
   ],
 })
 export class FormsModule { }

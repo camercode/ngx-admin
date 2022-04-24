@@ -5,6 +5,9 @@ import { SolarData } from '../../@core/data/solar';
 import { AbService } from '../../@core/utils/ab.service';
 import { MetadataService } from '../../@core/utils/metadata.service';
 
+import { LocalDataSource } from 'ng2-smart-table';
+import { SmartTableData } from '../../@core/data/smart-table';
+
 interface CardSettings {
   title: string;
   iconClass: string;
@@ -28,17 +31,17 @@ export class DashboardComponent implements OnInit, OnDestroy {
     type: 'primary',
   };
   rollerShadesCard: CardSettings = {
-    title: 'Roller Shades',
+    title: 'Two Step Validation',
     iconClass: 'nb-roller-shades',
     type: 'success',
   };
   wirelessAudioCard: CardSettings = {
-    title: 'Wireless Audio',
+    title: 'Toogle Audio',
     iconClass: 'nb-audio',
     type: 'info',
   };
   coffeeMakerCard: CardSettings = {
-    title: 'Coffee Maker',
+    title: 'Accessibility Mode',
     iconClass: 'nb-coffee-maker',
     type: 'warning',
   };
@@ -88,7 +91,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   constructor(private themeService: NbThemeService,
               private metaDataService: MetadataService,
               private solarService: SolarData,
-              private abService: AbService) {
+              private abService: AbService, 
+              private service: SmartTableData) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
@@ -100,6 +104,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
       .subscribe((data) => {
         this.solarValue = data;
       });
+
+    // Table
+    const data = this.service.getData();
+    this.source.load(data);
   }
 
   ngOnInit() {
@@ -116,4 +124,59 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.alive = false;
   }
+
+  // Table
+  source: LocalDataSource = new LocalDataSource();
+  settings = {
+    add: {
+      addButtonContent: '<i class="nb-plus"></i>',
+      createButtonContent: '<i class="nb-checkmark"></i>',
+      cancelButtonContent: '<i class="nb-close"></i>',
+    },
+    edit: {
+      editButtonContent: '<i class="nb-edit"></i>',
+      saveButtonContent: '<i class="nb-checkmark"></i>',
+      cancelButtonContent: '<i class="nb-close"></i>',
+    },
+    delete: {
+      deleteButtonContent: '<i class="nb-trash"></i>',
+      confirmDelete: true,
+    },
+    columns: {
+      id: {
+        title: 'Agent ID',
+        type: 'number',
+        addable: false,
+      },
+      firstName: {
+        title: 'First Name',
+        type: 'string',
+      },
+      lastName: {
+        title: 'Last Name',
+        type: 'string',
+      },
+      username: {
+        title: 'RAL',
+        type: 'string',
+      },
+      email: {
+        title: 'FAL',
+        type: 'string',
+      },
+      age: {
+        title: 'BILL',
+        type: 'number',
+      },
+    },
+  };
+
+  onDeleteConfirm(event): void {
+    if (window.confirm('Are you sure you want to delete?')) {
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
+
 }

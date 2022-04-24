@@ -5,12 +5,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
   template: `
     <span class="created-by">
-      Created with ♥ by <b><a href="https://www.akveo.com?utm_campaign=services%20-%20homepage%20-%20ngx_admin%20demo&utm_source=ngx_admin&utm_medium=referral&utm_content=demo_footer_link"
-                              target="_blank">Akveo</a></b> 2019.
-      Made with
+      Powered by <b><a href="https://ca-cib.com"
+                              target="_blank">Crédit Agricole CIB</a></b> 2022.
+      All Rights Reserved
       <b>
-        <a href="https://akveo.github.io/nebular/?utm_campaign=nebular%20-%20home%20-%20ngx_admin%20demo&utm_source=ngx_admin&utm_medium=referral&utm_content=nebular_footer_link" target="_blank">
-        Nebular.
+        <a href="https://ca-cib.com" target="_blank">
+        Terms and Conditions.
         </a>
       </b>
     </span>

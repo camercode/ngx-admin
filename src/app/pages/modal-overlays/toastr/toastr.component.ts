@@ -26,8 +26,8 @@ export class ToastrComponent {
   preventDuplicates = false;
   status: NbComponentStatus = 'primary';
 
-  title = 'HI there!';
-  content = `I'm cool toaster!`;
+  title = 'Contract management!';
+  content = `Contract saved!`;
 
   types: NbComponentStatus[] = [
     'primary',
@@ -48,7 +48,7 @@ export class ToastrComponent {
   ];
 
   quotes = [
-    { title: null, body: 'We rock at Angular' },
+    { title: null, body: 'Contact saved successfully' },
     { title: null, body: 'Titles are not always needed' },
     { title: null, body: 'Toastr rock!' },
   ];
